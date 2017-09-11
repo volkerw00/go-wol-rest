@@ -1,0 +1,5 @@
+# Go binaries
+*.exe
+*.dll
+*.so
+*.dylib
