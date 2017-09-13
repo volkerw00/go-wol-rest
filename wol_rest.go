@@ -28,7 +28,6 @@ func NewServer() *gin.Engine {
 }
 
 func wake(c *gin.Context) {
-
 	broadcastIP := c.DefaultQuery("broadcastIP", options.BroadcastIP)
 	mac := c.Query("mac")
 
@@ -46,6 +45,7 @@ func wake(c *gin.Context) {
 		})
 		return
 	}
+
 	broadcastAdress, error := wol.NewBroadcastAdressFrom(broadcastIP)
 	if error != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -53,6 +53,7 @@ func wake(c *gin.Context) {
 		})
 		return
 	}
+
 	error = wol.NewMagicPacket(macAdress).Send(broadcastAdress)
 	if error != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
@@ -62,5 +63,6 @@ func wake(c *gin.Context) {
 		log.Printf("Sent magic packet for %s to %s", mac, broadcastIP)
 		c.Status(204)
 	}
+
 	return
 }
