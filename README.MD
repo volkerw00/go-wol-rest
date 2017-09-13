@@ -1,6 +1,6 @@
 # go-wol-rest
 
-[![Build Status](https://travis-ci.org/voowoo/go-wol-rest.svg?branch=master)](https://travis-ci.org/voowoo/go-wol)
+[![Build Status](https://travis-ci.org/voowoo/go-wol-rest.svg?branch=master)](https://travis-ci.org/voowoo/go-wol) [![Coverage Status](https://coveralls.io/repos/voowoo/go-wol-rest/badge.svg)](https://coveralls.io/r/voowoo/go-wol-rest)
 
 Wake on LAN over REST
 
