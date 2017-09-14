@@ -11,12 +11,12 @@ import (
 )
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	error := parseArgs()
 	if error != nil {
 		os.Exit(1)
 	}
 	r := NewServer()
-	gin.SetMode(gin.ReleaseMode)
 	r.Run()
 }
 
